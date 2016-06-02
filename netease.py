@@ -1,8 +1,6 @@
 #coding=utf-8
 from api import NetEase
-import mp3play
 import time
-import pyglet
 import webbrowser
 
 class RasWxMusicbox:

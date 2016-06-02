@@ -1,5 +1,4 @@
 #coding=utf-8
-
 import time
 import itchat
 import netease
@@ -7,6 +6,7 @@ import threading
 import os
 import subprocess
 import webbrowser
+import signal
 
 itchat.auto_login()
 will_play_list = []   #播放列表
@@ -58,7 +58,7 @@ def play():
         song_name = song['song_name']
         mp3_url = song['mp3_url']
         try:
-            os.kill(process.pid)
+            os.kill(process.pid, 9)
         except:
             pass
         process = subprocess.Popen(['mpg123', mp3_url])
