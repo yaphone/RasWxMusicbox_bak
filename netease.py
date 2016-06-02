@@ -6,10 +6,8 @@ import pyglet
 import webbrowser
 
 class RasWxMusicbox:
-    def __init__(self):
+    def __init__(self, song_name):
         self.mp3_date = None
-    
-    def get_music(self, song_name):
         netease = NetEase()
         data = netease.search(song_name, stype=1, offset=0, total='true', limit=60)
 #        print data
@@ -22,16 +20,16 @@ class RasWxMusicbox:
                 for i in range(0, len(data['result']['songs']) ):
                     song_ids.append( data['result']['songs'][i]['id'] )
                 songs = netease.songs_detail(song_ids)
-        self.mp3_data = netease.dig_info(songs, 'songs')   #歌曲信息，album, artist, song_name, mp3_url
-        return self.mp3_data[0]
+        self.mp3_data = netease.dig_info(songs, 'songs')   #歌曲信息，album, artist, song_name, mp3_url        
+    
+    def get_music(self, index):
+        return self.mp3_data[index]
         
         
     def gen_music_list(self):
         #最多显示10条歌曲信息
         music_list = ''
         total = len(self.mp3_data)
-        if total >=10:
-            total = 10
         for i in range(total):
             music_list += '**' + str(i) + '**' + u'专辑：' + self.mp3_data[i]['album_name'] + '\n' \
                         + u'艺术家：' + self.mp3_data[i]['artist'] + '\n' \
@@ -61,10 +59,9 @@ class RasWxMusicbox:
 '''
 
 if __name__ == '__main__':
-    mb = RasWxMusicbox()
-    mp3_data = mb.get_music(u'南山南')
-    music_list = mb.gen_music_list()
-    mp3_url = mb.get_music_url(1)
+    mb = RasWxMusicbox(u'南山南')
+    print mb.get_music(2)
+    
     
     
 #    webbrowser.open(mp3_url)
