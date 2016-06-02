@@ -61,8 +61,8 @@ def play():
             os.kill(process.pid)
         except:
             pass
-#        process = subprocess.Popen(['mpg123', mp3_url])
-        webbrowser.open(mp3_url)
+        process = subprocess.Popen(['mpg123', mp3_url])
+#        webbrowser.open(mp3_url)
         return u'正在播放 %s' % song_name
     
 if __name__ == '__main__':
