@@ -1,22 +1,7 @@
 #coding=utf-8
 
-import threading
-import time
+import eyed3
 
-play_threading = None
-
-class Test1(threading.Thread):
-    def fun1(self, args):
-        while True:
-            print args
-            time.sleep(1)
-    
-    def run(self):
-        self.fun1()
-        
-    thread = threading.Thread(target=fun1, args='hello')
-    thread.start()
-    
-    
-t = Test1()
-t.start()
+mp3 = 'http://m2.music.126.net/GkFXC6qt6rEU2q9KYU-6yQ==/1373290025677371.mp3'
+tmp = eyed3.load(mp3)
+print tmp.info.time_sec
