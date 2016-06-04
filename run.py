@@ -40,11 +40,11 @@ def musicbox():
                     play(mp3_url)
                     return song_info
                 except:
-                    return u'输入有误，请重新输入'                    
+                    return u'输入有误，请重新输入'
             else:
                 return u'输入有误，请重新输入'
     itchat.run()
-                
+
 
 def play(mp3_url):
     try:
@@ -53,8 +53,8 @@ def play(mp3_url):
     except:
         pass
     finally:
-#        subprocess.Popen(['mpg123', mp3_url])
-        webbrowser.open(mp3_url)
+        subprocess.Popen(['mpg123', mp3_url])
+#        webbrowser.open(mp3_url)
 
 if __name__ == '__main__':
     musicbox()
