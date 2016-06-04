@@ -64,10 +64,3 @@ if __name__ == '__main__':
 
 
 #    webbrowser.open(mp3_url)
-'''
-[{'mp3_url': u'http://m2.music.126.net/GkFXC6qt6rEU2q9KYU-6yQ==/1373290025677371.mp3', 
-'song_id': 41462137, 'album_name': u'\u6587\u6b66\u8d1d\u94a2\u7434\u6539\u7f16\u4f5c\u54c1\u96c6\uff082015\u5e74\u5168\u96c6\uff09', 
-'song_name': u'\u5357\u5c71\u5357-\u6587\u6b66\u8d1d\u94a2\u7434\u7248', 'artist': u'\u6587\u6b66\u8d1d'}]
-
-
-'''
